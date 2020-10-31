@@ -1,7 +1,6 @@
 package api.config;
 
-import services.ResponseHeadersService;
-import services.UserService;
+import services.*;
 
 public enum EntityConfiguration {
 
@@ -17,7 +16,32 @@ public enum EntityConfiguration {
         public Class<?> getEntityService() {
             return ResponseHeadersService.class;
         }
+    },
+    ANALYSIS {
+        @Override
+        public Class<?> getEntityService() {
+            return AnalysisService.class;
+        }
+    },
+    BREEDS {
+        @Override
+        public Class<?> getEntityService() {
+            return BreedsService.class;
+        }
+    },
+    IMAGEID {
+        @Override
+        public Class<?> getEntityService() {
+            return ImageIdService.class;
+        }
+    },
+    CATEGORIES {
+        @Override
+        public Class<?> getEntityService() {
+            return CategoriesService.class;
+        }
     };
 
     public abstract Class<?> getEntityService();
+
 }
